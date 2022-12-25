@@ -1,3 +1,3 @@
-mod fifo_queue;
+mod list;
 
 fn main() {}
