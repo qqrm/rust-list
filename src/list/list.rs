@@ -62,7 +62,7 @@ impl<T> Drop for List<T> {
     }
 }
 
-mod test {
+mod list_test {
 
     use super::*;
 
