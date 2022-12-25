@@ -1,17 +1,19 @@
 use super::list::*;
 
-pub struct IntoIter<T>(List<T>);
+pub struct IntoIter<T> {
+    list: List<T>,
+}
 
 impl<T> List<T> {
     pub fn into_iter(self) -> IntoIter<T> {
-        IntoIter(self)
+        IntoIter { list: self }
     }
 }
 
 impl<T> Iterator for IntoIter<T> {
     type Item = T;
     fn next(&mut self) -> Option<Self::Item> {
-        self.0.pop()
+        self.list.pop()
     }
 }
 
@@ -37,6 +39,7 @@ impl<'a, T> Iterator for Iter<'a, T> {
     }
 }
 
+#[cfg(test)]
 mod iter_tests {
     use super::*;
 

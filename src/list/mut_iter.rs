@@ -23,6 +23,7 @@ impl<'a, T> Iterator for IterMut<'a, T> {
     }
 }
 
+#[cfg(test)]
 mod iter_mut_tests {
     use super::*;
 
